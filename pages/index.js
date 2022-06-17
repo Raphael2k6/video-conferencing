@@ -1,21 +1,19 @@
-import styles from '../styles/Home.module.scss'
-import Layout from '../components/Layout'
-import HomePage from '../components/HomePage';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools'
 
+import dynamic from "next/dynamic";
 
-const queryClient = new QueryClient()
+const ClientSideControls = dynamic(
+  () => {
+    return import("../components/VideoConferencing.js");
+  },
+  { ssr: false }
+);
+
 
 export default function Home() {
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <Layout>
-          <HomePage />
-        </Layout>
-        <ReactQueryDevtools initialIsOpen={false} panelProps={{className: 'black'}} position="top-right"/>
-      </QueryClientProvider>
-    </>
+    <div className={"container"}>
+      {/* <Login /> */}
+      <ClientSideControls />
+    </div>
   )
 }

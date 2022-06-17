@@ -54,7 +54,7 @@ const apiResource = () => {
 			}
 		},
 
-		post: async ({ url, payload }) => {
+		post: async ({url, payload}) => {
 			try {
 				const data = service.post(url, payload);
 				const resolvedData = await Promise.resolve(data);

@@ -1,0 +1,122 @@
+.projectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass {
+    height: 85vh;
+    width: 75%;
+    padding: 0rem 5%;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    border: 1px solid rgba(215, 220, 217, 0.5);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1), 1px 1px 6px 1px rgba(63, 4, 35, 0.03);
+    transition: all 0.7s ease-in-out 0.7s;
+  }
+  
+.glass:hover {
+/* background: transparent; */
+border: 1px solid #F0860D;
+box-shadow: 1px 1px 4px rgba(186, 49, 240, 0.1), 1px 1px 6px 1px rgba(4, 46, 63, 0.03);
+}
+
+.glass h1, .glass p{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 4rem;
+}
+
+.projectCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    column-gap: 25px;
+    row-gap: 25px;
+    /* margin: 60px 100px; */
+
+}
+.projects {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    border: 1px solid rgba(215, 220, 217, 0.5);
+    border-radius: 0.3rem;
+    box-shadow: 1px 1px 4px rgb(0 0 0 / 10%), 1px 1px 6px 1px rgb(63 4 35 / 3%);
+    transition: all 0.9s ease-in-out 0.9s;
+    cursor: pointer;
+}
+.img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .9s ease;
+    background-color: #797c7e;
+}
+.projects:hover .overlay {
+    opacity: 1;
+}
+
+.hoverText {
+   text-align: center;
+   padding: 2rem;
+   color: #fff;
+   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1439px) {
+    .projectContainer {
+        height: 80vh;
+    }
+    .glass {
+        height: 75vh;
+        border-radius: 0.5rem;
+    }
+    .hoverText{
+        font-size: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .projectContainer {
+        height: 31rem;
+    }
+    .glass {
+        width: 96%;
+        height: 32rem;
+    }
+    .glass h1 {
+        margin: 1.5rem 0rem;
+        font-size: 1rem;
+    }
+    .projectCard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .projects {
+        width: 100%;
+        height: auto;
+    }
+    .hoverText {
+        font-size: 10px;
+        padding: 0.1rem;
+    
+     }
+};
